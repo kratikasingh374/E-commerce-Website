@@ -6,34 +6,34 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav id={styles.navbar}>
+    <nav className={styles.navbar}>
       
       {/* LOGO */}
-      <div id={styles.logo}>
-        <div id={styles.logoImage}>
+      <div className={styles.logo}>
+        <div className={styles.logoImage}>
           <img
             src="https://previews.123rf.com/images/dahlangraphic/dahlangraphic1911/dahlangraphic191100303/133838633-infinity-logo-design-inspiration-vector-illustration-template.jpg"
-            alt=""
-            id={styles.imageofLogo}
+            alt="logo"
+            className={styles.imageofLogo}
           />
         </div>
         <p className={styles.logoName}>Infinity</p>
       </div>
 
-      <div id={styles.main}>
+      {/* MAIN */}
+      <div className={styles.main}>
 
         {/* SEARCH */}
-        <div id={styles.searchSection}>
+        <div className={styles.searchSection}>
           <input
             type="text"
             placeholder="Search products..."
-            id={styles.searchBar}
+            className={styles.searchBar}
           />
-          <button id={styles.searchButton}>
-            <Search size={18} />
+          <button className={styles.searchButton}>
+            <Search size={18} strokeWidth={3} />
           </button>
         </div>
-
 
         {/* MENU ICON */}
         <div
@@ -48,9 +48,14 @@ const Navbar = () => {
           <li><a href="/">Home</a></li>
           <li><a href="/products">Products</a></li>
           <li><a href="/categories">Categories</a></li>
+
+          {/* Mobile only links */}
+          <li className={styles.mobileLink}><a href="#">Profile</a></li>
+          <li className={styles.mobileLink}><a href="#">Wishlist</a></li>
+          <li className={styles.mobileLink}><a href="#">Cart</a></li>
         </ul>
 
-        {/* ICON SECTION (moved outside ul) */}
+        {/* ICON SECTION (Desktop only) */}
         <div className={styles.iconSection}>
           <div className={styles.iconBox}>
             <User size={22} />
@@ -67,6 +72,7 @@ const Navbar = () => {
             <span>Cart</span>
           </div>
         </div>
+
       </div>
     </nav>
   );

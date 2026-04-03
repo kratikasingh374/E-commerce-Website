@@ -1,31 +1,30 @@
 /* ================== BASE ================== */
 
-#navbar{
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color:#30045a;
+    background-color: #A755C2;
     color: #fff;
-    font-weight: 500;
 }
 
 /* ================== LOGO ================== */
 
-#logo{
+.logo{
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-#logoImage{
+.logoImage{
     height: 45px;
     width: 45px;
     border-radius: 50%;
     overflow: hidden;
 }
 
-#imageofLogo{
+.imageofLogo{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -38,21 +37,22 @@
 
 /* ================== MAIN ================== */
 
-#main{
+.main{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 40px;
 }
 
 /* ================== SEARCH ================== */
 
-#searchSection{
+.searchSection{
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 10px;
 }
 
-#searchBar{
+.searchBar{
   height: 35px;
   width: 300px;
   border-radius: 25px;
@@ -60,14 +60,26 @@
   padding: 10px;
 }
 
-#searchButton{
+.searchBar:focus {
+  outline: none;
+  box-shadow: 0 0 5px #A755C2;
+}
+
+.searchButton {
     height: 35px;
-    width: 70px;
+    width: 55px;
     border-radius: 25px;
-    background-color: #30045a;
-    color: #fff;
+    background-color: #fff;
+    color: #A755C2;
     border: 2px solid #fff;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #A755C2;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 /* ================== ICON SECTION ================== */
@@ -75,8 +87,7 @@
 .iconSection {
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin-left: 30px; /* space from search */
+  gap: 40px;
 }
 
 .iconBox {
@@ -84,7 +95,6 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  color: #fff;
   font-size: 12px;
   transition: all 0.3s ease;
 }
@@ -96,8 +106,8 @@
 
 .iconBox span {
   margin-top: 3px;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 /* ================== LINKS ================== */
@@ -105,22 +115,23 @@
 .links{
     list-style: none;
     display: flex;
-    gap: 35px;
-    margin-left: 40px; /* space from icons */
+    gap: 40px;
     padding: 0;
 }
 
 .links li a {
-  display: inline-block;
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .links li a:hover {
   text-shadow: 0 0 8px #fff;
-  transform: scale(1.1);
+}
+
+/* Mobile hidden links */
+.mobileLink{
+  display: none;
 }
 
 /* ================== MENU ICON ================== */
@@ -128,91 +139,127 @@
 .menuIcon {
   display: none;
   cursor: pointer;
-  margin-left: 20px;
 }
 
 /* ================== MOBILE ================== */
 
 @media (max-width: 720px) {
 
-  #navbar {
+  .navbar {
     padding: 10px;
+    position: relative; /* important for dropdown positioning */
   }
 
-  #main {
-    width: 100%;
-    justify-content:flex-end;
-    gap: 10px;
+  /* ================== LOGO ================== */
+
+  .logo{
+    flex-direction: column;
+    gap: 3px;
   }
 
-  /* LOGO */
-  .logoName {
-    font-size: 18px;
+  .logoName{
+    font-size: 12px;
   }
 
-  #logoImage {
+  .logoImage{
     height: 35px;
     width: 35px;
   }
 
-  /* SEARCH */
-  #searchSection {
-    flex: 1;
-    gap: 8px;
-  }
+  /* ================== MAIN ================== */
 
-  #searchBar {
-    height: 30px;
+  .main{
     width: 100%;
-    font-size: 14px;
-    padding: 6px 10px;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  #searchButton {
+  /* ================== SEARCH ================== */
+
+  .searchSection{
+    flex: 1;
+    margin-left: 40px;
+  }
+
+  .searchBar{
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .searchButton{
     height: 30px;
     width: 55px;
-    font-size: 12px;
   }
 
-  /* ICONS */
-  .iconSection {
-    gap: 12px;
-    margin-left: 30px;
+  /* ================== ICONS ================== */
+
+  .iconSection{
+    display: none;
   }
 
-  .iconBox {
-    font-size: 10px;
-  }
+  /* ================== MENU ICON ================== */
 
-  /* MENU ICON */
-  .menuIcon {
+  .menuIcon{
     display: block;
+    margin-left: auto;
+    cursor: pointer;
   }
 
-  /* LINKS DROPDOWN */
-  .links {
+  /* ================== DROPDOWN ================== */
+
+  .links{
     display: none;
     position: absolute;
-    top: 60px;
-    right: 0;
+    top: 70px;
+    right: 2px;
     width: 100%;
-    background-color: #30045a;
+    background-color: #fff;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    margin-left: 0;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
   }
 
-  .showMenu {
+  .showMenu{
     display: flex;
   }
 
-  .links li {
+  /* ================== LINKS STYLE ================== */
+
+  .links li{
     width: 100%;
   }
 
-  .links li a {
+  .links li a{
+    display: block;
     width: 100%;
+    color: #000;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .links li:last-child a{
+    margin-bottom: 0;
+  }
+
+  .links li a:hover{
+    background-color: #A755C2;
+    color: #fff;
+    border-color: #A755C2;
+  }
+
+  /* ================== MOBILE EXTRA LINKS ================== */
+
+  .mobileLink{
     display: block;
   }
 }
