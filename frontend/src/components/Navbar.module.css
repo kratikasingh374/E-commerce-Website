@@ -1,0 +1,218 @@
+/* ================== BASE ================== */
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:#30045a;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* ================== LOGO ================== */
+
+#logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logoImage{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#imageofLogo{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.logoName{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ================== MAIN ================== */
+
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ================== SEARCH ================== */
+
+#searchSection{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#searchBar{
+  height: 35px;
+  width: 300px;
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+}
+
+#searchButton{
+    height: 35px;
+    width: 70px;
+    border-radius: 25px;
+    background-color: #30045a;
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+/* ================== ICON SECTION ================== */
+
+.iconSection {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: 30px; /* space from search */
+}
+
+.iconBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.iconBox:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 8px #fff;
+}
+
+.iconBox span {
+  margin-top: 3px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ================== LINKS ================== */
+
+.links{
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin-left: 40px; /* space from icons */
+    padding: 0;
+}
+
+.links li a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.links li a:hover {
+  text-shadow: 0 0 8px #fff;
+  transform: scale(1.1);
+}
+
+/* ================== MENU ICON ================== */
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* ================== MOBILE ================== */
+
+@media (max-width: 720px) {
+
+  #navbar {
+    padding: 10px;
+  }
+
+  #main {
+    width: 100%;
+    justify-content:flex-end;
+    gap: 10px;
+  }
+
+  /* LOGO */
+  .logoName {
+    font-size: 18px;
+  }
+
+  #logoImage {
+    height: 35px;
+    width: 35px;
+  }
+
+  /* SEARCH */
+  #searchSection {
+    flex: 1;
+    gap: 8px;
+  }
+
+  #searchBar {
+    height: 30px;
+    width: 100%;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  #searchButton {
+    height: 30px;
+    width: 55px;
+    font-size: 12px;
+  }
+
+  /* ICONS */
+  .iconSection {
+    gap: 12px;
+    margin-left: 30px;
+  }
+
+  .iconBox {
+    font-size: 10px;
+  }
+
+  /* MENU ICON */
+  .menuIcon {
+    display: block;
+  }
+
+  /* LINKS DROPDOWN */
+  .links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #30045a;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 0;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+
+  .links li {
+    width: 100%;
+  }
+
+  .links li a {
+    width: 100%;
+    display: block;
+  }
+}
