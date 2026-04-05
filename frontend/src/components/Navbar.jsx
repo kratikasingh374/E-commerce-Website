@@ -44,10 +44,12 @@ const Navbar = () => {
         </div>
 
         {/* LINKS */}
-        <ul className={`${styles.links} ${open ? styles.showMenu : ""}`}>
-          <li><a href="/">Home</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/categories">Categories</a></li>
+        <ul className={`${styles.links} ${open ? styles.showMenu : ""}`}> <li><a href="/Men">Men</a></li>
+          <li><a href="/Women">Women</a></li>  <li><a href="/Kids">Kids</a></li>
+           <li><a href="/Kitchen">Kitchen</a></li>
+        <li><a href="/Electronics">Electronics</a></li>
+          <li><a href="/Home">Home</a></li>
+         
 
           {/* Mobile only links */}
           <li className={styles.mobileLink}><a href="#">Profile</a></li>
