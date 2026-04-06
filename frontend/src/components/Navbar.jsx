@@ -31,7 +31,7 @@ const Navbar = () => {
             className={styles.searchBar}
           />
           <button className={styles.searchButton}>
-            <Search size={18} strokeWidth={3} />
+            <Search size={18} strokeWidth={3.5} />
           </button>
         </div>
 
